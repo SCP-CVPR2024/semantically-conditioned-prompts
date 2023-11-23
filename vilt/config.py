@@ -46,7 +46,7 @@ def config():
     # prompts config # these default ones are for SCP # for agnostic prompts see README
     prompt_type = 'input'
     prompt_length = 12
-    pool_size = 1024
+    pool_size = 32
     learnt_p = True
     prompt_layers = [6,7,8,9,10,11]
     multi_layer_prompt = True    
@@ -111,9 +111,9 @@ def config():
     num_workers = 8
     precision = 16
     model_name = "ViLTransformerSS_QKV_ps"
-    target_lr=0.002
-    fixed_prompts=4
-    fixed_prompt_layers=[0,1,2,3,4,5]
+    target_lr=0.002 # only if clamp is used
+    fixed_prompts=4 # these are the agnostic prompts in a SCP generator
+    fixed_prompt_layers=[0,1,2,3,4,5] # layers of agnostic prompts only
 
 
 # Named configs for "environment" which define gpus and nodes, and paths
